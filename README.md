@@ -26,7 +26,7 @@ The Docker image can be found at my public repo:
 https://hub.docker.com/r/ipv6freely/down-list/
 
 # TODO
-* Error handling+++
+* Error handling++
 
 # Credits
 This application uses the `tiangolo/uwsgi-nginx-flask:flask-python3.5` Docker image created by Sebastian Ramirez. 
