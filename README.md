@@ -11,6 +11,11 @@ Start up the container. The script expects `STATSEEKER_USERNAME` and `STATSEEKER
 
 Examples:
 
-```docker run -d --env-file ~/.envfile --name=down-list -p 80:80 -t ipv6freely/down-list```
+```
+docker run -d --env-file ~/.envfile --name=down-list -p 80:80 -t ipv6freely/down-list
+```
+OR
 
-```docker run -d --env STATSEEKER_USERNAME=username --env STATSEEKER_PASSWORD=password --name=down-list -p 80:80 -t ipv6freely/down-list```
+```
+docker run -d --env STATSEEKER_USERNAME=username --env STATSEEKER_PASSWORD=password --name=down-list -p 80:80 -t ipv6freely/down-list
+```
