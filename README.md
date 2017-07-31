@@ -25,6 +25,9 @@ docker run -d --env STATSEEKER_USERNAME=username --env STATSEEKER_PASSWORD=passw
 The Docker image can be found at my public repo:
 https://hub.docker.com/r/ipv6freely/down-list/
 
+# TODO
+* Error handling+++
+
 # Credits
 This application uses the `tiangolo/uwsgi-nginx-flask:flask-python3.5` Docker image written by Sebastian Ramirez. 
 https://hub.docker.com/r/tiangolo/uwsgi-nginx-flask/
