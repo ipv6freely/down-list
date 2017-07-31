@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>{{ title }}</h1>
+    <table class="table table-condensed table-striped ">
+    <tr>
+        <th>Name</th>
+        <th>IP Address</th>
+        <th>Location</th>
+        <th>Contact</th>
+        <th>Down Time</th>
+    </tr>
+    {% for device in downdevices %}
+    	<tr>
+            <td>{{ device['name'] }}</td>
+            <td>{{ device['ipaddress'] }}</td>
+            <td>{{ device['location'] }} </td>
+            <td>{{ device['contact'] }}</td>
+            <td>{{ device['elapsed'] }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
