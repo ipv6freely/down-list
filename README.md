@@ -1,6 +1,6 @@
 # DOWN-LIST
 
-Grabs list of currently down devices from Statseeker
+Grabs list of currently down devices from Statseeker.
 
 # Usage
 
