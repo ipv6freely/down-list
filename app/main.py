@@ -16,14 +16,15 @@ def down():
 
     statseeker_username = os.getenv("STATSEEKER_USERNAME")
     statseeker_password = os.getenv("STATSEEKER_PASSWORD")
+    statseeker_url = os.getenv("STATSEEKER_URL")
 
     requests.packages.urllib3.disable_warnings()
 
     headers = {'Accept':'application/json', 'Content-Type':'application/json'}
-    down_events_url = 'https://statseeker.sempra.com/api/latest/event/?fields=device,description,status&status_formats=time,state&description_filter==\u0027ping_state\u0027&status_filter==\u0027down\u0027&status_filter_format=state&links=none&limit=0&indent=3'
+    down_events_url = statseeker_url + '/api/latest/event/?fields=device,description,status&status_formats=time,state&description_filter==\u0027ping_state\u0027&status_filter==\u0027down\u0027&status_filter_format=state&links=none&limit=0&indent=3'
     down_events = requests.get(down_events_url, headers=headers, auth=(statseeker_username, statseeker_password), verify=False).json()
 
-    all_devices_url = 'https://statseeker.sempra.com/api/latest/cdt_device/?fields=name,.ipaddress,SNMPv2-MIB.sysDescr,SNMPv2-MIB.sysContact,SNMPv2-MIB.sysLocation,.ping_poll,.snmp_poll&.snmp_poll_filter=IS(\u0027on\u0027)&.ping_poll_filter=IS(\u0027on\u0027)&links=none&limit=0'
+    all_devices_url = statseeker_url + '/api/latest/cdt_device/?fields=name,.ipaddress,SNMPv2-MIB.sysDescr,SNMPv2-MIB.sysContact,SNMPv2-MIB.sysLocation,.ping_poll,.snmp_poll&.snmp_poll_filter=IS(\u0027on\u0027)&.ping_poll_filter=IS(\u0027on\u0027)&links=none&limit=0'
     all_devices = requests.get(all_devices_url, headers=headers, auth=(statseeker_username, statseeker_password), verify=False).json()
 
     include_net_list = [
